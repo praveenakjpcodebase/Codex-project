@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101221">
+  <title>Hello, World — A Little Wonder</title>
+  <style>
+    :root { color-scheme: dark; --ink:#f7f4ff; --muted:#b9b8ce; --glow:#b7a2ff; }
+    * { box-sizing: border-box; }
+    body {
+      margin:0; min-height:100svh; display:grid; place-items:center; overflow:hidden;
+      color:var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at 50% 40%, #27234b 0%, #17172d 38%, #0d1020 78%);
+    }
+    body::before, body::after { content:""; position:fixed; inset:-20%; pointer-events:none; }
+    body::before { opacity:.42; background-image: radial-gradient(1px 1px at 12% 22%,#fff 99%,transparent), radial-gradient(1px 1px at 79% 18%,#d9caff 99%,transparent), radial-gradient(2px 2px at 67% 77%,#fff 99%,transparent), radial-gradient(1px 1px at 25% 82%,#fff 99%,transparent), radial-gradient(1px 1px at 91% 61%,#d9caff 99%,transparent), radial-gradient(1px 1px at 48% 12%,#fff 99%,transparent); background-size: 420px 360px; animation: drift 30s linear infinite; }
+    body::after { background: radial-gradient(ellipse at center, transparent 25%, #080a14aa 100%); }
+    .card { position:relative; z-index:1; width:min(900px, calc(100% - 40px)); padding:clamp(42px, 8vw, 88px) 24px; text-align:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; color:#d9d2ff; font-size:.76rem; letter-spacing:.2em; text-transform:uppercase; }
+    .eyebrow::before,.eyebrow::after { content:""; width:28px; height:1px; background:linear-gradient(90deg,transparent,#a89af3); }
+    .eyebrow::after { transform:rotate(180deg); }
+    h1 { margin:26px 0 18px; font-size:clamp(4rem, 13vw, 9.5rem); line-height:.92; letter-spacing:-.075em; font-weight:750; }
+    h1 span { display:block; color:transparent; background:linear-gradient(105deg,#fff 8%,#d8ceff 43%,#a993ff 70%,#f3d9ff 100%); background-clip:text; -webkit-background-clip:text; filter:drop-shadow(0 8px 34px #a28aff40); }
+    .subtitle { max-width:480px; margin:0 auto; color:var(--muted); font-size:clamp(1rem,2.3vw,1.2rem); line-height:1.75; }
+    .spark { display:inline-block; margin:30px 0 0; color:#d5c9ff; font-size:1.3rem; animation: twinkle 3s ease-in-out infinite; }
+    .footer { position:fixed; bottom:24px; left:0; right:0; text-align:center; color:#777991; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; }
+    @keyframes drift { to { transform:translate3d(18px,-12px,0); } }
+    @keyframes twinkle { 50% { opacity:.4; transform:scale(.82) rotate(18deg); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none !important; scroll-behavior:auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">A little hello</div>
+    <h1><span>Hello,</span><span>world.</span></h1>
+    <p class="subtitle">A small beginning, a whole universe of possibility.<br>It’s lovely to have you here.</p>
+    <div class="spark" aria-hidden="true">✦</div>
+  </main>
+  <div class="footer">Made for the moment</div>
+</body>
+</html>
